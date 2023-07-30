@@ -12,10 +12,13 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import joblib
 import gzip
+import os
 
 
-# Load the dataset
-data = pd.read_csv('data/breast_cancer.csv')
+# Load the database
+data_dir=os.path.join(os.path.dirname(__file__),'..','data')
+data_file_path=os.path.join(data_dir,'breast_cancer.csv')
+data = pd.read_csv(data_file_path)
 
 # Preprocess dataset
 data = data.set_index('id')
